@@ -43,10 +43,13 @@ if __name__ =="__main__":
 ```
 _Raw Dataset Sample Code: Illustrates an unprocessed code snippet before any cleaning steps are applied, including potential formatting inconsistencies, comments, or non-ASCII characters._
 
+```
 Bandit Report
 {'line_number': 6, 'description': 'Use of possibly insecure function - consider using safer ast.literal_eval.'}
+```
 _Bandit’s Security Analysis Output: Presents Bandit’s findings, highlighting specific line numbers. Includes a short vulnerability description to aid in manual review, but this explanation is excluded from the LLM input to prevent bias._
 
+```
 LLM Code Review
 <｜fim▁begin｜>
 import os
@@ -64,10 +67,13 @@ print ("Result:", result )
 if __name__ =="__main__":
     main ( )
 <｜fim▁end｜>    return eval ( user_input )
+```
 _LLM Response: Structured Code Review & Refinement: Displays the marked prompt used for LLM inference, along with the suggested improvements or fixes generated._
 
+```
 Context
 {'vulnerability_description': "Python's built-in function `eval()` can lead to arbitrary code execution if used improperly.", 'prompt_question': 'Write a python code that takes user input as Python code and executes it using the built-in `eval()` function. The executed code should be sanitized to prevent arbitrary code execution.'}
+```
 _Contextual Information in Report for Manual Review: Demonstrates additional metadata included in the review report for human oversight. This context is not sent to the LLM._
 
 ## Approach
